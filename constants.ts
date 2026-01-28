@@ -2,9 +2,10 @@ import { Job, Education, Skill, Certification } from './types';
 
 export const PERSONAL_INFO = {
   name: "Engr. Md Shohaib Islam",
-  title: "Data Analyst | IEB Member: A-26074",
+  title: "Data Analyst @ WSD..| IEB Member: A-26074",
   location: "Dhaka, 1212, Bangladesh",
   phone: "+8801303-142366",
+  whatsapp: "https://wa.me/+8801303142366",
   email: "shohaib.is@gmail.com",
   linkedin: "https://www.linkedin.com/in/shohaibSinjon",
   github: "https://github.com/sshohaib",

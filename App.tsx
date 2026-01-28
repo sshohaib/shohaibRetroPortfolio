@@ -5,8 +5,10 @@ import CRTOverlay from './components/CRTOverlay';
 import FintechViz from './components/FintechViz';
 import PhotoCarousel from './components/PhotoCarousel';
 import { PERSONAL_INFO, EXPERIENCE, SKILLS, CERTIFICATIONS, EDUCATION } from './constants';
-import { Mail, Phone, MapPin, Linkedin, Github, Database, Cpu, ShieldCheck } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Github, Database, Cpu, ShieldCheck, MessageSquareMore } from 'lucide-react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from 'recharts';
+import { Typewriter } from "react-simple-typewriter";
+
 
 const App: React.FC = () => {
   return (
@@ -20,11 +22,11 @@ const App: React.FC = () => {
           {/* HERO SECTION */}
           <section className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             <div className="space-y-6">
-              <div className="inline-block border border-retro-accent px-2 py-1 text-xs text-retro-accent animate-pulse">
+              <div className="inline-block border border-retro-green px-2 py-1 text-xs text-retro-green animate-pulse">
                 STATUS: ONLINE
               </div>
-              <h1 className="text-4xl md:text-6xl font-bold uppercase glitch-text">
-                {PERSONAL_INFO.name}
+              <h1 className="text-4xl md:text-6xl font-bold text-retro-accent uppercase glitch-text">
+                <Typewriter words={[PERSONAL_INFO.name]} loop={false} cursorStyle="_"  cursorBlinking={true} cursor={true} />
               </h1>
               <h2 className="text-xl md:text-2xl text-retro-green/80 border-l-4 border-retro-green pl-4">
                 {PERSONAL_INFO.title}
@@ -42,6 +44,9 @@ const App: React.FC = () => {
                 </a>
                 <a href={PERSONAL_INFO.github} target="_blank" rel="noreferrer" className="flex items-center gap-2 border border-retro-green px-4 py-2 hover:bg-retro-green/20 transition-colors">
                   <Github size={18} /> GITHUB
+                </a>
+                <a href={PERSONAL_INFO.whatsapp} target="_blank" rel="noreferrer" className="flex items-center gap-2 border border-retro-green px-4 py-2 hover:bg-retro-green/20 transition-colors">
+                  <MessageSquareMore size={18} /> Whatsapp
                 </a>
               </div>
             </div>
@@ -177,20 +182,20 @@ const App: React.FC = () => {
             <h2 className="text-3xl font-bold mb-8 blink">INITIATE_HANDSHAKE</h2>
             <div className="flex flex-col md:flex-row justify-center gap-8 mb-8">
               <div className="flex items-center justify-center gap-2">
-                 <Phone size={20} className="text-retro-accent" />
+                 <Phone size={25} className="text-retro-accent" />
                  <span>{PERSONAL_INFO.phone}</span>
               </div>
               <div className="flex items-center justify-center gap-2">
-                 <MapPin size={20} className="text-retro-accent" />
+                 <MapPin size={25} className="text-retro-accent" />
                  <span>{PERSONAL_INFO.location}</span>
               </div>
               <div className="flex items-center justify-center gap-2">
-                 <Mail size={20} className="text-retro-accent" />
+                 <Mail size={25} className="text-retro-accent" />
                  <span>{PERSONAL_INFO.email}</span>
               </div>
             </div>
             <p className="text-xs text-retro-green/40">
-              SYSTEM_ID: A-26074 | ENGR_SHOHAIB_ISLAM | © 2025
+              DATA_ANALYST_@_WSD.. | ENGR_MD_SHOHAIB_ISLAM | © 2026
             </p>
           </footer>
 

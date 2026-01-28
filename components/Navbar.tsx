@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Terminal, Menu, X } from 'lucide-react';
+import cv from  './shohaib_cv.pdf';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,26 +10,28 @@ const Navbar: React.FC = () => {
     { label: 'EXP_LOGS', path: '#experience' },
     { label: 'SKILL_MATRIX', path: '#skills' },
     { label: 'COMM_LINK', path: '#contact' },
+    { label: 'DOWNLOAD_CV', path: cv },
   ];
 
   return (
     <nav className="sticky top-0 z-40 bg-retro-bg/90 border-b border-retro-green backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <div className="flex items-center">
+          <a href="/"><div className="flex items-center">
             <Terminal className="h-6 w-6 text-retro-green mr-2 animate-pulse" />
             <span className="font-mono text-xl font-bold tracking-wider text-retro-green">
-              MS_ISLAM<span className="animate-pulse-fast">_</span>
+              MD_SHOHAIB<span className="animate-pulse-fast">_</span>
             </span>
-          </div>
+          </div></a>
           
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
-              {navItems.map((item) => (
+              {navItems.map((item, index) => (
                 <a
                   key={item.label}
                   href={item.path}
-                  className="text-retro-green hover:bg-retro-green hover:text-retro-bg px-3 py-2 rounded-sm text-sm font-medium transition-colors duration-200 border border-transparent hover:border-retro-green"
+                  download={item.label === 'DOWNLOAD_CV' ? true : undefined}
+                  className={index < 4 ? 'text-retro-green hover:bg-retro-green hover:text-retro-bg px-3 py-2 rounded-sm text-sm font-medium transition-colors duration-200 border border-transparent hover:border-retro-green' : 'text-retro-accent hover:bg-retro-accent hover:text-retro-bg px-3 py-2 rounded-sm text-lg font-medium transition-colors duration-200 border border-transparent hover:border-retro-accent'}
                 >
                   [{item.label}]
                 </a>
