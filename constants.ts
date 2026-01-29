@@ -6,7 +6,7 @@ export const PERSONAL_INFO = {
   location: "Dhaka, 1212, Bangladesh",
   phone: "+8801303-142366",
   whatsapp: "https://wa.me/+8801303142366",
-  email: "shohaib.is@gmail.com",
+  email: "shohaib@cse.engr.bd",
   linkedin: "https://www.linkedin.com/in/shohaibSinjon",
   github: "https://github.com/sshohaib",
   summary: "Fulltime Data Analyst with background in Software Engineering & Consultancy having expertise in US SEC Compliances, Power BI (MS certified associate), CISCO networking, and network security. Skilled in Financial Data Analysis, Product Management, and converting complex data into actionable insights."
