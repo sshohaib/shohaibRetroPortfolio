@@ -54,12 +54,12 @@ const Navbar: React.FC = () => {
       {isOpen && (
         <div className="md:hidden bg-retro-bg border-b border-retro-green">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            {navItems.map((item) => (
+            {navItems.map((item, index) => (
               <a
                 key={item.label}
                 href={item.path}
                 onClick={() => setIsOpen(false)}
-                className="text-retro-green hover:bg-retro-green hover:text-retro-bg block px-3 py-2 rounded-md text-base font-medium"
+                className={index < 4 ? "text-retro-green hover:bg-retro-green hover:text-retro-bg block px-3 py-2 rounded-md text-base font-medium" : "text-retro-accent hover:bg-retro-accent hover:text-retro-bg block px-3 py-2 rounded-md text-lg font-medium"}
               >
                 {'>'} {item.label}
               </a>
