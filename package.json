@@ -13,7 +13,9 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.30.3",
-    "recharts": "2.12.3"
+    "react-simple-typewriter": "^5.0.1",
+    "recharts": "2.12.3",
+    "simple-icons": "^16.6.1"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",
