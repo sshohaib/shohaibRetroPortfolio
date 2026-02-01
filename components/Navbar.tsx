@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Terminal, Menu, X } from 'lucide-react';
-import cv from  './shohaib_cv.pdf';
+import cv from  './ignore/shohaib_cv.pdf';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
