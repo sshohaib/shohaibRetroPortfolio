@@ -1,4 +1,5 @@
 import { Job, Education, Skill, Certification } from './types';
+import cv from  './components/ignore/shohaib_cv.pdf';
 
 export const PERSONAL_INFO = {
   name: "Engr. Md Shohaib Islam",
@@ -10,6 +11,12 @@ export const PERSONAL_INFO = {
   linkedin: "https://www.linkedin.com/in/shohaibSinjon",
   github: "https://github.com/sshohaib",
   summary: "Fulltime Data Analyst with background in Software Engineering & Consultancy having expertise in US SEC Compliances, Power BI (MS certified associate), CISCO networking, and network security. Skilled in Financial Data Analysis, Product Management, and converting complex data into actionable insights."
+};
+
+
+export const ext_links = {
+  DOWNLOAD_CV_PATH: cv,
+  form_script_url: "https://script.google.com/macros/s/AKfycbxqsBwjlzpvuWL3SQHBUA3CPmCkTHKU2xzgXl6rENF0G3Hg7IR0f6-8yrKpPuubeMe3/exec"
 };
 
 export const EXPERIENCE: Job[] = [
