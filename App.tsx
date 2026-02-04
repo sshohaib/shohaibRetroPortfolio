@@ -234,7 +234,7 @@ const App: React.FC = () => {
           </section>
 
         
-          {/* CONTACT FOOTER */}
+          {/* CONTACT FOOTER -- Another contact section at the bottom for emphasis, can be uncommented if needed */}
           {/*<footer id="contact" className="border-t-4 border-retro-green pt-12 pb-6 text-center">
             <h2 className="text-3xl font-bold mb-8 blink">INITIATE_HANDSHAKE</h2>
             <div className="flex flex-col md:flex-row justify-center gap-8 mb-8">
