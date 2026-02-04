@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import CRTOverlay from './components/CRTOverlay';
 import FintechViz from './components/FintechViz';
 import PhotoCarousel from './components/PhotoCarousel';
+import ContactForm from './components/ContactForm';
 import { PERSONAL_INFO, EXPERIENCE, SKILLS, CERTIFICATIONS, EDUCATION } from './constants';
 import { Mail, Phone, MapPin, Linkedin, Github, Database, Cpu, ShieldCheck, MessageSquareMore } from 'lucide-react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from 'recharts';
@@ -176,9 +177,65 @@ const App: React.FC = () => {
             </div>
           </section>
 
+
+          {/* CONTACT & TRANSMISSION */}
+          <section id="contact" className="border-t-4 border-retro-green pt-12 pb-6">
+            <h2 className="text-3xl font-bold mb-12 blink text-center">INITIATE_HANDSHAKE</h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              <div className="space-y-8">
+                <div className="border border-retro-green p-6 bg-retro-green/5">
+                  <h3 className="text-xl font-bold text-retro-accent mb-6">COMM_CHANNELS</h3>
+                  
+                  <div className="space-y-6">
+                    <div className="flex items-start gap-4">
+                       <div className="bg-retro-green/10 p-3 rounded-sm border border-retro-green/30">
+                         <Phone size={24} className="text-retro-accent" />
+                       </div>
+                       <div>
+                         <label className="text-xs text-retro-green/50 block">SECURE_LINE</label>
+                         <span className="text-lg hover:text-retro-accent hover:text-xl transition-shadow">{PERSONAL_INFO.phone}</span>
+                       </div>
+                    </div>
+
+                    <div className="flex items-start gap-4">
+                       <div className="bg-retro-green/10 p-3 rounded-sm border border-retro-green/30">
+                         <Mail size={24} className="text-retro-accent" />
+                       </div>
+                       <div>
+                         <label className="text-xs text-retro-green/50 block">DIGITAL_MAIL</label>
+                         <span className="text-lg hover:text-retro-accent hover:text-xl transition-opacity break-all">{PERSONAL_INFO.email}</span>
+                       </div>
+                    </div>
+
+                    <div className="flex items-start gap-4">
+                       <div className="bg-retro-green/10 p-3 rounded-sm border border-retro-green/30">
+                         <MapPin size={24} className="text-retro-accent" />
+                       </div>
+                       <div>
+                         <label className="text-xs text-retro-green/50 block">PHYSICAL_COORDINATES</label>
+                         <span className="text-lg hover:text-retro-accent hover:text-xl transition-transform">{PERSONAL_INFO.location}</span>
+                       </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="text-center md:text-left">
+                  <p className="text-xs text-retro-green/40">
+                    DATA_ANALYST_@_WSD.. | ENGR_MD_SHOHAIB_ISLAM | © 2026
+                  </p>
+                </div>
+              </div>
+
+              <div>
+                <ContactForm />
+              </div>
+            </div>
+          </section>
+
         
           {/* CONTACT FOOTER */}
-          <footer id="contact" className="border-t-4 border-retro-green pt-12 pb-6 text-center">
+          {/*<footer id="contact" className="border-t-4 border-retro-green pt-12 pb-6 text-center">
             <h2 className="text-3xl font-bold mb-8 blink">INITIATE_HANDSHAKE</h2>
             <div className="flex flex-col md:flex-row justify-center gap-8 mb-8">
               <div className="flex items-center justify-center gap-2">
@@ -197,7 +254,7 @@ const App: React.FC = () => {
             <p className="text-xs text-retro-green/40">
               DATA_ANALYST_@_WSD.. | ENGR_MD_SHOHAIB_ISLAM | © 2026
             </p>
-          </footer>
+          </footer>*/}
 
         </main>
       </div>

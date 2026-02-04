@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Terminal, Menu, X } from 'lucide-react';
-import cv from  './shohaib_cv.pdf';
+import { ext_links } from '../constants';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,7 +10,7 @@ const Navbar: React.FC = () => {
     { label: 'EXP_LOGS', path: '#experience' },
     { label: 'SKILL_MATRIX', path: '#skills' },
     { label: 'COMM_LINK', path: '#contact' },
-    { label: 'DOWNLOAD_CV', path: cv },
+    { label: 'DOWNLOAD_CV', path: ext_links.DOWNLOAD_CV_PATH },
   ];
 
   return (

@@ -12,6 +12,8 @@ dist
 dist-ssr
 *.local
 components/*.pdf
+components/ignore
+constants.ts
 
 # Editor directories and files
 .vscode/*
