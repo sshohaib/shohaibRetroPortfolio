@@ -11,14 +11,7 @@ const ContactForm: React.FC = () => {
   const [status, setStatus] = useState<'IDLE' | 'SENDING' | 'SUCCESS' | 'ERROR'>('IDLE');
   const [showGuide, setShowGuide] = useState(false);
 
-  // ---------------------------------------------------------------------------
-  // CONFIGURATION:
-  // 1. Create a Google Sheet
-  // 2. Extensions > Apps Script
-  // 3. Paste the code from the '?' guide button
-  // 4. Deploy > New Deployment > Web App > Access: "Anyone"
-  // 5. Paste the URL below:
-  // ---------------------------------------------------------------------------
+  // Script web app URL for Google Apps Script form submission
   const SCRIPT_URL = ext_links.form_script_url; 
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -65,61 +58,7 @@ const ContactForm: React.FC = () => {
         <Terminal size={12} /> MSG_UPLINK_TERMINAL
       </div>
       
-      {/*<div className="absolute top-2 right-2">
-        <button 
-          onClick={() => setShowGuide(!showGuide)}
-          className="text-xs flex items-center gap-1 text-retro-accent hover:underline"
-        >
-          <Database size={12} /> {showGuide ? 'CLOSE_GUIDE' : 'CONNECT_TO_EXCEL'}
-        </button>
-      </div>*/}
-
-      {/*{showGuide && (
-        <div className="mb-6 mt-4 p-4 border border-retro-accent/50 bg-retro-accent/5 text-xs text-retro-green font-mono overflow-hidden relative">
-          <h4 className="font-bold text-retro-accent mb-2">Google Sheet Backend Setup:</h4>
-          <ol className="list-decimal pl-4 space-y-1 mb-2 text-retro-green/80">
-            <li>Create a Google Sheet. Headers (Row 1): <code className="text-white">timestamp</code>, <code className="text-white">name</code>, <code className="text-white">email</code>, <code className="text-white">message</code>.</li>
-            <li>Go to <strong>Extensions -- Apps Script</strong>.</li>
-            <li>Paste the code below into Code.gs.</li>
-            <li>Run <code>initialSetup()</code> once.</li>
-            <li><strong>Deploy -- New Deployment</strong> -- Select "Web App".</li>
-            <li>Execute as: "Me", Who has access: <strong>"Anyone"</strong> (Important!).</li>
-            <li>Copy the URL and paste it into <code>const SCRIPT_URL</code> in <code>ContactForm.tsx</code>.</li>
-          </ol>
-          <div className="bg-black p-2 border border-retro-green/30 overflow-x-auto h-32">
-            <pre className="whitespace-pre">
-{`const sheetName = 'Sheet1'
-const scriptProp = PropertiesService.getScriptProperties()
-
-function initialSetup () {
-  const activeSpreadsheet = SpreadsheetApp.getActiveSpreadsheet()
-  scriptProp.setProperty('key', activeSpreadsheet.getId())
-}
-
-function doPost (e) {
-  const lock = LockService.getScriptLock()
-  lock.tryLock(10000)
-
-  try {
-    const doc = SpreadsheetApp.openById(scriptProp.getProperty('key'))
-    const sheet = doc.getSheetByName(sheetName)
-    const headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0]
-    const nextRow = sheet.getLastRow() + 1
-    const newRow = headers.map(function(header) {
-      return header === 'timestamp' ? new Date() : e.parameter[header]
-    })
-    sheet.getRange(nextRow, 1, 1, newRow.length).setValues([newRow])
-    return ContentService.createTextOutput(JSON.stringify({ 'result': 'success', 'row': nextRow })).setMimeType(ContentService.MimeType.JSON)
-  } catch (e) {
-    return ContentService.createTextOutput(JSON.stringify({ 'result': 'error', 'error': e })).setMimeType(ContentService.MimeType.JSON)
-  } finally {
-    lock.releaseLock()
-  }
-}`}
-            </pre>
-          </div>
-        </div>
-      )}*/}
+      
       <form onSubmit={handleSubmit} className="mt-8 space-y-6">
         <div className="space-y-1 group">
           <label className="text-xs text-retro-green/70 group-focus-within:text-retro-accent transition-colors">
